@@ -12,3 +12,11 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+document.querySelector('.gallery').prepend(
+  ...images.map(({ url, alt }) => {
+    const imgItemEl = document.createElement('li');
+    imgItemEl.insertAdjacentHTML('beforeend', `<img src ="${url}" alt ="${alt}" width = "160">`);
+    return imgItemEl;
+  })
+);
