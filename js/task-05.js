@@ -5,9 +5,7 @@ const nameOutput = document.querySelector('#name-output');
 const handlerInputName = event => {
   const inputValue = event.currentTarget.value;
 
-  inputValue === ''
-    ? (nameOutput.textContent = 'Anonymous')
-    : (nameOutput.textContent = inputValue);
+  nameOutput.textContent = inputValue === '' ? 'Anonymous' : inputValue;
 };
 
 nameInput.addEventListener('input', handlerInputName);

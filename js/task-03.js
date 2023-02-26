@@ -13,12 +13,10 @@ const images = [
   },
 ];
 
+const galleryEl = document.querySelector('.gallery');
+
 const arrayOfItems = images.map(({ url, alt }) => {
-  const imgItemEl = document.createElement('li');
-
-  imgItemEl.insertAdjacentHTML('beforeend', `<img src ="${url}" alt ="${alt}" width = "320">`);
-
-  return imgItemEl;
+  return `<li><img src ="${url}" alt ="${alt}" width = "320"></li>`;
 });
 
-document.querySelector('.gallery').append(...arrayOfItems);
+galleryEl.insertAdjacentHTML('beforeend', arrayOfItems.join(''));
